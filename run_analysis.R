@@ -8,8 +8,8 @@
 # 5. From the data set in step 4, creates a second, independent tidy data set with the average of each 
 #    variable for each activity and each subject.
 
-## If data directory exists, change to that directory.
-## Else, create data directory, download and unzip raw data files.
+# If data directory exists, change to that directory.
+# Else, create data directory, download and unzip raw data files.
 
 if (!file.exists("data")) {
         dir.create("data")
@@ -17,7 +17,7 @@ if (!file.exists("data")) {
 
 setwd("./data")
 
-# Check to see data is already dowloaded
+# Check to see data is already downloaded
 
 if (!file.exists("./UCI HAR Dataset")) {
         # Download data if needed
@@ -26,17 +26,17 @@ if (!file.exists("./UCI HAR Dataset")) {
         unzip("Dataset.zip")
         }
 
-## Load required libraries
+# Load required libraries
 library(data.table)
 library(reshape2)
 
-# Load activity labels
+# Read activity labels
 activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt",header=FALSE)[,2]
 
-# Load data column names
+# Read data column names
 features <- read.table("./UCI HAR Dataset/features.txt",header=FALSE)[,2]
 
-# Extract only mean and standard deviation
+# Extract only mean and standard deviation data
 extract_features <- grepl("mean|std", features)
 
 # Read training data
@@ -46,7 +46,7 @@ y_train <- read.table("./UCI HAR Dataset/train/y_train.txt",header=FALSE)
 
 names(x_train) = features
 
-# Extract only the measurements on the mean and standard deviation for each measurement.
+# Extract only the measurements on the mean and standard deviation data
 x_train = x_train[,extract_features]
 
 # Read activity data
@@ -78,7 +78,7 @@ names(subject_test) = "subject"
 # Merge test data 
 testData <- cbind(as.data.table(subject_test), y_test, x_test)
 
-# Merge the training and the test sets to create one data set
+# Merge the training and the test sets to create one merged dataset
 mergedData <- rbind(trainingData,testData)
 
 id_labels = c("subject", "Activity_ID", "Activity_Label")
@@ -88,4 +88,5 @@ melt_data = melt(mergedData, id = id_labels, measure.vars = data_labels)
 # Apply mean function to dataset using dcast function
 tidy_mergedData = dcast(melt_data, subject + Activity_Label ~ variable, mean)
 
+# Create tidy text file
 write.table(tidy_mergedData, file = "./tidy_merged_data.txt", row.name=FALSE)
