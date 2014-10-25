@@ -24,3 +24,6 @@ The script will create a data directory and download the data for you from:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 It will unzip the data and create a tidy dataset with mean of each variable for each activity and each subject.
+
+Please see Codebook.md in this repo for more details about the dataset and the script.
+
