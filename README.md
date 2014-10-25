@@ -14,16 +14,13 @@ The R script run_analysis.R does the following:
 4) Appropriately labels the data set with descriptive activity names.
 5) Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-Save run_analysis.R into your default working directory.
-reshape2 and data.table packages must be installed prior to running script.  
-The script will load the packages it needs.
+Save run_analysis.R into your default working directory. reshape2 and data.table packages must be installed prior to running script.  The script will load the packages it needs.
 
 Run the run_analysis.R script
 
-The script will create a data directory and download the data for you from:
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+The script will create a data directory and download the raw data for you from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-It will unzip the data and create a tidy dataset with mean of each variable for each activity and each subject.
+It will unzip the data, process the inputs and create a tidy dataset with mean of each variable for each activity and each subject as the output.
 
 Please see Codebook.md in this repo for more details about the dataset and the script.
 
