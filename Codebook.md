@@ -119,3 +119,10 @@ tBodyGyroMean
 tBodyGyroJerkMean
 
 The complete list of variables of each feature vector is available in 'features.txt'
+
+Transformations
+=========================================
+
+The run_analysis.r script merges the training and test datasets.  Then only the mean and standard devitations of each measurement are extracted.  A second, independent tidy data set with the average of each variable for each activity and each subject is then created and writen as a text file named tidy_merged_data.txt.
+
+
