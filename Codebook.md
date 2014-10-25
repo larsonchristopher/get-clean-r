@@ -12,7 +12,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 The README.txt file downloaded as part of the dataset for the project describes the data below.  The features_info.txt file describes the variables.
 
 Exerpt from README.TXT: Study Design and Description of Dataset
-=========================================
+===============================================================
 
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
@@ -121,8 +121,17 @@ tBodyGyroJerkMean
 The complete list of variables of each feature vector is available in 'features.txt'
 
 Notes on Transformations
-=========================================
+========================
 
 The run_analysis.r script merges the training and test datasets.  Then only the mean and standard devitations of each measurement are extracted.  A second, independent tidy data set with the average of each variable for each activity and each subject is then created and writen as a text file named tidy_merged_data.txt.
 
+Instructions
+============
 
+Save run_analysis.R into your default working directory. reshape2 and data.table packages must be installed prior to running script.  The script will load the packages it needs.
+
+Run the run_analysis.R script
+
+The script will create a data directory and download the raw data for you from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+It will unzip the data, process the inputs and create a tidy dataset with mean of each variable for each activity and each subject as the output
