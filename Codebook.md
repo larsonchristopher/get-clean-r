@@ -134,4 +134,4 @@ Run the run_analysis.R script
 
 The script will create a data directory and download the raw data for you from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-It will unzip the data, process the inputs and create a tidy dataset with mean of each variable for each activity and each subject as the output
+It will unzip the data, process the inputs and create a tidy dataset with mean of each variable for each activity and each subject as the output.
